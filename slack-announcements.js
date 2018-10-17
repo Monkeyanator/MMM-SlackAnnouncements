@@ -11,14 +11,14 @@
      
     // Configuration
     defaults: {
-        channel: "CDAQZ4JPL",
-        slackToken: "xoxa-2-358490956676-453043057765-452761999987-6feeaa569f409a1f41143c3fbd7a95f4",
-        messages: 3,
+        channel: "",
+        slackToken: "",
+        messages: 1,
         updateInterval: 60, // in seconds
     },
 
     getChannelMessages: function(){
-        var url = "https://slack.com/api/channels.history?token=xoxa-2-358490956676-453043057765-452761999987-6feeaa569f409a1f41143c3fbd7a95f4&channel=CDAQZ4JPL&count=1";
+        var url = "";
         var self = this;
         var slackMessageRequest = new XMLHttpRequest();
 
@@ -49,11 +49,9 @@
     },
 
     start: function(){ 
-        console.log("I'm confused");
-        Log.info("Starting module: slack announcements");
 
 		var self = this;
-		setIntervalf(function() {
+		setInterval(function() {
 			self.getChannelMessages();
 		}, 3000);
 
