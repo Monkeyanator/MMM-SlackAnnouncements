@@ -1,6 +1,6 @@
 ## Hacker Home Mountain View Presents...
 
-![alt text](https://raw.githubusercontent.com/Monkeyanator/MMM-SlackAnnouncements/images/sample.png)
+![alt text](https://raw.githubusercontent.com/Monkeyanator/MMM-SlackAnnouncements/master/images/sample.png)
 
 # MMM-SlackAnnouncements
 MagicMirror<sup>2</sup> made.
