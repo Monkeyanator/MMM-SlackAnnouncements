@@ -13,12 +13,11 @@
     defaults: {
         channel: "",
         slackToken: "",
-        messages: 1,
-        updateInterval: 60, // in seconds
+        updateMs: 3000, // in ms
     },
 
     getChannelMessages: function(){
-        var url = "";
+        var url = `https://slack.com/api/channels.history?token=${this.config.slackToken}&channel=${this.config.channel}&count=1`;
         var self = this;
         var slackMessageRequest = new XMLHttpRequest();
 
@@ -31,10 +30,6 @@
                     self.processMessage(message);
                 } else if (this.status === 401) {
 					self.updateDom(self.config.animationSpeed);
-					Log.error(self.name + ": Incorrect APPID.");
-					
-				} else {
-					Log.error(self.name + ": Could not load weather.");
 				}
 			}
         };
@@ -53,17 +48,19 @@
 		var self = this;
 		setInterval(function() {
 			self.getChannelMessages();
-		}, 3000);
+		}, this.config.updateMs);
 
     },
 
     getDom: function(){
 
-        console.log("abcdsafdasjflasdfljasjflsakjf");
-        var wrapper = document.createElement("div");
+    var wrapper = document.createElement("div");
+    wrapper.innerHTML = `
+        <h1> Announcements </h1>
+        ${this.message}
+    `;
 
-        wrapper.innerHTML = this.message;
-        return wrapper;
+	return wrapper;
 
     }
 
