@@ -8,6 +8,10 @@ MagicMirror<sup>2</sup> made.
 ## Dependencies
   * Must have the core installation of [MagicMirror<sup>2</sup>](https://github.com/MichMich/MagicMirror)
 
+## Usage 
+
+Point the module at the desired Slack `channel` (not the channel name, but the ID) and give it a `slackToken` with valid permissions (authorized to read channel histories), and it will display the latest message on the channel on your mirror as an announcement.
+
 ## Installation
  1. Clone this repo into `~/MagicMirror/modules` directory.
  2. Configure your `~/MagicMirror/config/config.js`:
