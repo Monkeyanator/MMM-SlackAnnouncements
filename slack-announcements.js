@@ -54,13 +54,15 @@
 
     getDom: function(){
 
-    var wrapper = document.createElement("div");
-    wrapper.innerHTML = `
-        <h1> Announcements </h1>
-        ${this.message}
-    `;
+        var wrapper = document.createElement("div");
+        var displayText = this.message == undefined ? "Loading..." : this.message;
 
-	return wrapper;
+        wrapper.innerHTML = `
+            <h1> Announcements </h1>
+            ${displayText}
+        `;
+
+        return wrapper;
 
     }
 
