@@ -1,5 +1,6 @@
+## Hacker Home Mountain View Presents...
 # MMM-SlackAnnouncements
-MagicMirror<sup>2</sup> made .
+MagicMirror<sup>2</sup> made.
 
 ## Dependencies
   * Must have the core installation of [MagicMirror<sup>2</sup>](https://github.com/MichMich/MagicMirror)
