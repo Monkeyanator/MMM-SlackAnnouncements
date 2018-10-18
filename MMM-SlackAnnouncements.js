@@ -7,10 +7,11 @@
  * MIT Licensed.
  */
 
- Module.register("slack-announcements", {
+ Module.register("MMM-SlackAnnouncements", {
      
     // Configuration
     defaults: {
+        title: "Announcements",
         channel: "",
         slackToken: "",
         updateMs: 3000, // in ms
@@ -28,7 +29,9 @@
                     var parsedResponse = JSON.parse(this.response); 
                     var message = parsedResponse.messages[0].text
                     self.processMessage(message);
-                } else if (this.status === 401) {
+                } 
+                
+                else if (this.status === 401) {
 					self.updateDom(self.config.animationSpeed);
 				}
 			}
@@ -58,7 +61,7 @@
         var displayText = this.message == undefined ? "Loading..." : this.message;
 
         wrapper.innerHTML = `
-            <h1> Announcements </h1>
+            <h1> ${this.config.title} </h1>
             ${displayText}
         `;
 
