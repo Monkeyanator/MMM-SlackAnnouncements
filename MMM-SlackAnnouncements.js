@@ -17,7 +17,7 @@ Module.register("MMM-SlackAnnouncements", {
   },
 
   getChannelMessages: function() {
-    var url = `https://slack.com/api/channels.history?token=${
+    var url = `https://slack.com/api/conversations.history?token=${
       this.config.slackToken
     }&channel=${this.config.channel}&count=1`;
     var self = this;
